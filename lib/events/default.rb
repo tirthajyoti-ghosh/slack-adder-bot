@@ -5,13 +5,18 @@ SlackRubyBotServer::Events.configure do |config|
     slack_client = Slack::Web::Client.new(token: ENV['SLACK_BOT_USER_ACCESS_TOKEN'])
     
     if !event[:event][:bot_id]
-      msg = event[:event][:text]
+      if event[:event][:text] =~ /^\d+\ ?\+\ ?\d+$/
 
-      n1, n2 = msg.split('+')
-      result = n1.to_i + n2.to_i
-
-      bot_msg = "#{msg} = #{result}"
-      slack_client.chat_postMessage(channel: event[:event][:channel], text: "#{bot_msg}")
+        msg = event[:event][:text]
+        
+        num1, num2 = msg.split('+')
+        result = num1.to_i + num2.to_i
+        
+        bot_msg = "#{msg} = #{result}"
+        slack_client.chat_postMessage(channel: event[:event][:channel], text: "#{bot_msg}")
+      else
+        slack_client.chat_postMessage(channel: event[:event][:channel], text: "Sorry, I didn't understand that. I only add numbers in this format. eg: 5+6 or 6+3")
+      end
     end
 
     { ok: true }
