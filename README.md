@@ -29,23 +29,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/tirthajyoti-ghosh/weather-app">
+  <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot">
     <img src="https://user-images.githubusercontent.com/57726348/88449500-02aafb00-ce65-11ea-9a69-1bc31d6d649e.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Weather App</h3>
+  <h3 align="center">Slack Adder Bot</h3>
 
   <p align="center">
-    A weather app that shows weather data by city.
+    TBA
     <br />
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app">View Demo</a>
+    <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot">View Demo</a>
     ·
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app/issues">Report Bug</a>
+    <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot/issues">Report Bug</a>
     ·
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app/issues">Request Feature</a>
+    <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot/issues">Request Feature</a>
   </p>
 </p>
 
@@ -67,33 +67,17 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Weather App Screenshot](https://user-images.githubusercontent.com/57726348/88449813-ae554a80-ce67-11ea-8500-0e3505daf29a.png)
+![Screenshot](https://user-images.githubusercontent.com/57726348/102822841-cc67ac80-43ff-11eb-8e58-72690aeae8eb.png)
 
-This is a weather app that shows temperatures (current, feels like, min, max), cloudiness (%), and wind speed (m/s) by city name. The city name is obtained from form input. This app consumes OpenWeather API in the `JSON` format to show weather data.
-
-Data points consumed:
-
-* City name
-* Country code
-* Weather description
-* Weather icon
-* Current temperature
-* Feels like temperature
-* Minimum temperature
-* Maximum temperature
-* Cloudiness
-* Wind speed
+A simple slack chat bot that adds two numbers. Eg: when the user types to the bot `234 + 123`, it responds back with `357`.
 
 ### Built With
 
-* Material Design Lite
-* OpenWeatherMap
-* Webpack
-* ES6
+TBA
 
 ## Live demo
 
-Deployed to Raw Githack - [live demo](https://rawcdn.githack.com/tirthajyoti-ghosh/weather-app/0b69b93c02b080fa740a2ec65031f403675c142d/dist/index.html).
+TBA
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -102,51 +86,21 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-* npm
-
-    ```sh
-    npm install npm@latest -g
-    ```
+TBA
 
 ### Installation
 
-1. Clone the repo
-
-    ```sh
-    git clone https://github.com/tirthajyoti-ghosh/weather-app.git
-    ```
-
-2. Install NPM packages
-
-    ```sh
-    npm install
-    ```
-
-3. Start local server
-
-    ```sh
-    npm run dev
-    ```
-    
-4. Visit `http://localhost:8080/` in your browser.
-
-   OR
-
-   Navigate to the `/dist` folder and open the `index.html` in your browser.
+TBA
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-![Usage example](https://user-images.githubusercontent.com/57726348/88450206-d98d6900-ce6a-11ea-9256-f20becd92fe2.jpg)
-
-1. Enter the city name and press the `Enter` key.
-2. Weather data is displayed here.
-3. These are buttons to convert the temperature in their respective units.
+TBA
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/tirthajyoti-ghosh/weather-app/issues) for a list of proposed features (and known issues).
+TBA
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -169,28 +123,24 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Tirthajyoti Ghosh - [@terrific_ghosh](https://twitter.com/terrific_ghosh) - itirthahere@gmail.com
 
-Project Link: [https://github.com/tirthajyoti-ghosh/weather-app](https://github.com/tirthajyoti-ghosh/weather-app)
+Project Link: [https://github.com/tirthajyoti-ghosh/slack-adder-bot](https://github.com/tirthajyoti-ghosh/slack-adder-bot)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [OpenWeatherMap](https://openweathermap.org/api)
-* README Icon made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-* [Img Shields](https://shields.io)
-* [Font Awesome](https://fontawesome.com)
-* [Material Design Lite](https://getmdl.io/)
+TBA
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[contributors-url]: https://github.com/tirthajyoti-ghosh/weather-app/graphs/contributors
+[contributors-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[forks-url]: https://github.com/tirthajyoti-ghosh/weather-app/network/members
+[forks-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/network/members
 [stars-shield]: https://img.shields.io/github/stars/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[stars-url]: https://github.com/tirthajyoti-ghosh/weather-app/stargazers
+[stars-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/stargazers
 [issues-shield]: https://img.shields.io/github/issues/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[issues-url]: https://github.com/tirthajyoti-ghosh/weather-app/issues
+[issues-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/issues
 [license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
-[license-url]: https://github.com/tirthajyoti-ghosh/weather-app/blob/development/LICENSE
+[license-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/blob/development/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/tirthajyoti-ghosh/
