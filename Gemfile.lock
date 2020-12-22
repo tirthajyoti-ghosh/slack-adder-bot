@@ -143,6 +143,8 @@ GEM
     timers (4.3.2)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2020.4)
+      tzinfo (>= 1.0.0)
     uber (0.1.0)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
@@ -161,6 +163,7 @@ DEPENDENCIES
   puma
   slack-ruby-bot-server (>= 1.1.0)
   slack-ruby-bot-server-events
+  tzinfo-data
 
 RUBY VERSION
    ruby 2.6.5p114
