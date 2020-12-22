@@ -73,11 +73,16 @@ A simple slack chat bot that adds two numbers. Eg: when the user types to the bo
 
 ### Built With
 
-TBA
+* slack-ruby-bot-server
+* slack-ruby-bot-server-events
+* mongodb
+* mongoid
 
 ## Live demo
 
-TBA
+**IMPORTANT!** Checkout this video first - <https://www.loom.com/share/e6580d2a62a042b4ba10d20f3015953f>
+
+Deployed to Heroku - <https://enigmatic-thicket-31440.herokuapp.com/>
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -86,7 +91,9 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-TBA
+* MongoDB
+* Ruby
+* Admin access to Slack Workspace.
 
 ### Installation
 
