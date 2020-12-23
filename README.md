@@ -36,12 +36,12 @@
   <h3 align="center">Slack Adder Bot</h3>
 
   <p align="center">
-    TBA
+    A Slack bot that adds two numbers. Built with Ruby.
     <br />
     <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot">View Demo</a>
+    <a href="https://www.loom.com/share/07050cd0480c4109b01ad411b9e92189">Video Demo</a>
     ·
     <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot/issues">Report Bug</a>
     ·
@@ -57,6 +57,8 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
+  * [Setting Up Slack](#setting-up-slack)
+  * [Setting Up Web Hook](#setting-up-web-hook)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
@@ -67,9 +69,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Screenshot](https://user-images.githubusercontent.com/57726348/102822841-cc67ac80-43ff-11eb-8e58-72690aeae8eb.png)
-
 A simple slack chat bot that adds two numbers. Eg: when the user types to the bot `234 + 123`, it responds back with `357`.
+
+![Screenshot](https://user-images.githubusercontent.com/57726348/102822841-cc67ac80-43ff-11eb-8e58-72690aeae8eb.png)
 
 ### Built With
 
@@ -197,7 +199,7 @@ To get a local copy up and running follow these simple steps.
 
 Start a direct chat with the bot. The input must be in this format => `6+3`. If the input does not have two numbers and an addition symbol in between, respond back with a error message - "Sorry, I didn't understand that. I only add numbers in this format. eg: 5+6 or 6+3".
 
-![image](https://user-images.githubusercontent.com/57726348/103020540-94cb4280-456e-11eb-81aa-c9d680a7c8b8.png)
+![usage](https://user-images.githubusercontent.com/57726348/103031653-42951c00-4584-11eb-82c1-632c48962904.gif)
 
 <!-- ROADMAP -->
 ## Roadmap
@@ -235,7 +237,10 @@ Project Link: [https://github.com/tirthajyoti-ghosh/slack-adder-bot](https://git
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-TBA
+* [slack-ruby-bot-server](https://github.com/slack-ruby/slack-ruby-bot-server)
+* [slack-ruby-bot-server-events](https://github.com/slack-ruby/slack-ruby-bot-server-events)
+* [slack-ruby-bot-server-events-sample](https://github.com/slack-ruby/slack-ruby-bot-server-events-sample)
+* README icon from Icons8
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
