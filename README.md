@@ -30,7 +30,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot">
-    <img src="https://user-images.githubusercontent.com/57726348/88449500-02aafb00-ce65-11ea-9a69-1bc31d6d649e.png" alt="Logo" width="80" height="80">
+    <img src="https://user-images.githubusercontent.com/57726348/103025447-d7454d00-4577-11eb-86cd-c887d68b014e.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Slack Adder Bot</h3>
@@ -239,13 +239,13 @@ TBA
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/tirthajyoti-ghosh/weather-app.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/tirthajyoti-ghosh/slack-adder-bot.svg?style=flat-square
 [contributors-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/tirthajyoti-ghosh/weather-app.svg?style=flat-square
+[forks-shield]: https://img.shields.io/github/forks/tirthajyoti-ghosh/slack-adder-bot.svg?style=flat-square
 [forks-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/network/members
-[stars-shield]: https://img.shields.io/github/stars/tirthajyoti-ghosh/weather-app.svg?style=flat-square
+[stars-shield]: https://img.shields.io/github/stars/tirthajyoti-ghosh/slack-adder-bot.svg?style=flat-square
 [stars-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/stargazers
-[issues-shield]: https://img.shields.io/github/issues/tirthajyoti-ghosh/weather-app.svg?style=flat-square
+[issues-shield]: https://img.shields.io/github/issues/tirthajyoti-ghosh/slack-adder-bot.svg?style=flat-square
 [issues-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/issues
 [license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
 [license-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/blob/development/LICENSE
