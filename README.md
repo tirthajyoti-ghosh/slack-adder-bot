@@ -29,23 +29,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/tirthajyoti-ghosh/weather-app">
-    <img src="https://user-images.githubusercontent.com/57726348/88449500-02aafb00-ce65-11ea-9a69-1bc31d6d649e.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot">
+    <img src="https://user-images.githubusercontent.com/57726348/103025447-d7454d00-4577-11eb-86cd-c887d68b014e.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Weather App</h3>
+  <h3 align="center">Slack Adder Bot</h3>
 
   <p align="center">
-    A weather app that shows weather data by city.
+    A Slack bot that adds two numbers. Built with Ruby.
     <br />
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app">View Demo</a>
+    <a href="https://www.loom.com/share/07050cd0480c4109b01ad411b9e92189">Video Demo</a>
     ·
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app/issues">Report Bug</a>
+    <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot/issues">Report Bug</a>
     ·
-    <a href="https://github.com/tirthajyoti-ghosh/weather-app/issues">Request Feature</a>
+    <a href="https://github.com/tirthajyoti-ghosh/slack-adder-bot/issues">Request Feature</a>
   </p>
 </p>
 
@@ -57,6 +57,8 @@
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
+  * [Setting Up Slack](#setting-up-slack)
+  * [Setting Up Web Hook](#setting-up-web-hook)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
@@ -67,33 +69,22 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Weather App Screenshot](https://user-images.githubusercontent.com/57726348/88449813-ae554a80-ce67-11ea-8500-0e3505daf29a.png)
+A simple slack chat bot that adds two numbers. Eg: when the user types to the bot `234 + 123`, it responds back with `357`.
 
-This is a weather app that shows temperatures (current, feels like, min, max), cloudiness (%), and wind speed (m/s) by city name. The city name is obtained from form input. This app consumes OpenWeather API in the `JSON` format to show weather data.
-
-Data points consumed:
-
-* City name
-* Country code
-* Weather description
-* Weather icon
-* Current temperature
-* Feels like temperature
-* Minimum temperature
-* Maximum temperature
-* Cloudiness
-* Wind speed
+![Screenshot](https://user-images.githubusercontent.com/57726348/103085343-6e0d1a80-4607-11eb-935e-55a5f1049725.png)
 
 ### Built With
 
-* Material Design Lite
-* OpenWeatherMap
-* Webpack
-* ES6
+* slack-ruby-bot-server
+* slack-ruby-bot-server-events
+* mongodb
+* mongoid
 
 ## Live demo
 
-Deployed to Raw Githack - [live demo](https://rawcdn.githack.com/tirthajyoti-ghosh/weather-app/0b69b93c02b080fa740a2ec65031f403675c142d/dist/index.html).
+**IMPORTANT!** Checkout this video first - <https://www.loom.com/share/07050cd0480c4109b01ad411b9e92189>
+
+Deployed to Heroku - <https://enigmatic-thicket-31440.herokuapp.com/>
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -102,51 +93,118 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-* npm
+* MongoDB
+* Ruby
+* Admin access to a Slack Workspace.
 
-    ```sh
-    npm install npm@latest -g
-    ```
+### Setting Up Slack
+
+1. Create a new Slack app from [here](https://api.slack.com/apps?new_app=1)
+
+2. Scroll down and you will find the **App Credentials** section. Take note of these four fields:
+
+    * Client ID
+    * Client Secret
+    * Signing Secret
+    * Verification Token
+
+    ![image](https://user-images.githubusercontent.com/57726348/102981481-05eb0580-452f-11eb-8f2f-97aa185f1f2b.jpg)
+
+    You will need these later.
+
+3. Go to **OAuth & Permissions**. You will find this option in the side bar.
+
+   ![image](https://user-images.githubusercontent.com/57726348/102981953-c375f880-452f-11eb-810b-b0dbd6ad0ca3.png)
+
+4. Scroll down to **Scopes** and add these 👇 scopes *one-by-one* to **Bot Token Scopes**:
+
+    * `users:read`
+    * `channels:read`
+    * `groups:read`
+    * `chat:write`
+    * `commands`
+    * `im:history`
+    * `incoming-webhook`
+
+    ![image)](https://user-images.githubusercontent.com/57726348/102985652-83b20f80-4535-11eb-95a6-0fc71d7d9b1b.png)
+
+5. Go to **Event Subscriptions**. You will find this option in the side bar. Then enable events.
+
+   ![image](https://user-images.githubusercontent.com/57726348/102985992-15ba1800-4536-11eb-8ef2-f04d2459b579.png)
+
+6. Click on **Subscribe to bot events**. Then click on the **Add Bot User Event** button. Then add `message.im` event.
+
+   ![image](https://user-images.githubusercontent.com/57726348/102986763-549c9d80-4537-11eb-804f-c5dd8195b400.png)
+
+   Everytime you send a direct message to the bot, the `message.im` event will be fired.
+
+7. Now you have to install this app to your workspace. Go to **Basic Information**. You will find this option in the side bar. Then click the **Install to Workspace** button.
+
+   ![image](https://user-images.githubusercontent.com/57726348/102987659-b4477880-4538-11eb-81b6-12a45bfd2284.png)
+
+8. In the next page, you will be asked to **Allow** the bot permissions. In the last permission (**Where should Example Bot post?**), select any channel.
+
+   ![image](https://user-images.githubusercontent.com/57726348/102988627-2f5d5e80-453a-11eb-904e-c29561dce9da.png)
 
 ### Installation
 
-1. Clone the repo
+1. Clone this repository.
 
-    ```sh
-    git clone https://github.com/tirthajyoti-ghosh/weather-app.git
-    ```
+   ```bash
+   git clone https://github.com/tirthajyoti-ghosh/slack-adder-bot.git
+   ```
 
-2. Install NPM packages
+2. Create an `.env` file in the root directory. Then fill these 👇 with their respective values (client id, client secret, etc. from slack app). The values must be put after the `=` sign.
 
-    ```sh
-    npm install
-    ```
+   ```text
+   SLACK_CLIENT_ID=
+   SLACK_CLIENT_SECRET=
+   SLACK_SIGNING_SECRET=
+   SLACK_VERIFICATION_TOKEN=
+   ```
 
-3. Start local server
+3. Run `bundle install` and `foreman start` to boot the app.
 
-    ```sh
-    npm run dev
-    ```
-    
-4. Visit `http://localhost:8080/` in your browser.
+   ```bash
+   $ foreman start
+   07:44:47 web.1  | started with pid 59258
+   07:44:50 web.1  | * Listening on tcp://0.0.0.0:5000
+   ```
 
-   OR
+### Setting Up Web Hook
 
-   Navigate to the `/dist` folder and open the `index.html` in your browser.
+1. Since Slack won't send a POST request to `localhost`, we need to expose our local server through a public tunneling service. You can use [ngrok](https://ngrok.com/).
+
+   ```bash
+   $ ngrok http 5000
+   Forwarding https://ddfd97f80615.ngrok.io -> http://localhost:5000
+   ```
+
+2. Go to **Event Subscriptions** in your Slack apps dashboard. You will find this option in the side bar. Then paste this URL in the **Request URL** field:
+
+   ```text
+   <your ngrok URL>/api/slack/event
+
+   Eg.,
+
+   https://ddfd97f80615.ngrok.io/api/slack/event
+   ```
+
+   ![image](https://user-images.githubusercontent.com/57726348/103019463-e5da3700-456c-11eb-86c7-1163dfcebfad.png)
+
+3. Click on **Save Changes** if necessary.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-![Usage example](https://user-images.githubusercontent.com/57726348/88450206-d98d6900-ce6a-11ea-9256-f20becd92fe2.jpg)
+Start a direct chat with the bot. The input must be in this format => `6+3`. If the input does not have two numbers and an addition symbol in between, respond back with a error message - "Sorry, I didn't understand that. I only add numbers in this format. eg: 5+6 or 6+3".
 
-1. Enter the city name and press the `Enter` key.
-2. Weather data is displayed here.
-3. These are buttons to convert the temperature in their respective units.
+![usage](https://user-images.githubusercontent.com/57726348/103031653-42951c00-4584-11eb-82c1-632c48962904.gif)
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/tirthajyoti-ghosh/weather-app/issues) for a list of proposed features (and known issues).
+* Add tests.
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -167,30 +225,34 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Tirthajyoti Ghosh - [@terrific_ghosh](https://twitter.com/terrific_ghosh) - itirthahere@gmail.com
+👤 **Tirthajyoti Ghosh**
 
-Project Link: [https://github.com/tirthajyoti-ghosh/weather-app](https://github.com/tirthajyoti-ghosh/weather-app)
+* Website: [ghosh.tech](https://ghosh.tech/)
+* GitHub - [@tirthajyoti-ghosh](https://github.com/tirthajyoti-ghosh)
+* Twitter - [@terrific_ghosh](https://twitter.com/terrific_ghosh)
+* LinkedIn - [@tirthajyoti-ghosh](https://www.linkedin.com/in/tirthajyoti-ghosh/)
+
+Project Link: [https://github.com/tirthajyoti-ghosh/slack-adder-bot](https://github.com/tirthajyoti-ghosh/slack-adder-bot)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [OpenWeatherMap](https://openweathermap.org/api)
-* README Icon made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-* [Img Shields](https://shields.io)
-* [Font Awesome](https://fontawesome.com)
-* [Material Design Lite](https://getmdl.io/)
+* [slack-ruby-bot-server](https://github.com/slack-ruby/slack-ruby-bot-server)
+* [slack-ruby-bot-server-events](https://github.com/slack-ruby/slack-ruby-bot-server-events)
+* [slack-ruby-bot-server-events-sample](https://github.com/slack-ruby/slack-ruby-bot-server-events-sample)
+* README icon from Icons8
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[contributors-url]: https://github.com/tirthajyoti-ghosh/weather-app/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[forks-url]: https://github.com/tirthajyoti-ghosh/weather-app/network/members
-[stars-shield]: https://img.shields.io/github/stars/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[stars-url]: https://github.com/tirthajyoti-ghosh/weather-app/stargazers
-[issues-shield]: https://img.shields.io/github/issues/tirthajyoti-ghosh/weather-app.svg?style=flat-square
-[issues-url]: https://github.com/tirthajyoti-ghosh/weather-app/issues
+[contributors-shield]: https://img.shields.io/github/contributors/tirthajyoti-ghosh/slack-adder-bot.svg?style=flat-square
+[contributors-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/tirthajyoti-ghosh/slack-adder-bot.svg?style=flat-square
+[forks-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/network/members
+[stars-shield]: https://img.shields.io/github/stars/tirthajyoti-ghosh/slack-adder-bot.svg?style=flat-square
+[stars-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/stargazers
+[issues-shield]: https://img.shields.io/github/issues/tirthajyoti-ghosh/slack-adder-bot.svg?style=flat-square
+[issues-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/issues
 [license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
-[license-url]: https://github.com/tirthajyoti-ghosh/weather-app/blob/development/LICENSE
+[license-url]: https://github.com/tirthajyoti-ghosh/slack-adder-bot/blob/development/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/tirthajyoti-ghosh/
