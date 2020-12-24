@@ -16,7 +16,7 @@ class BotUser
   def add_from(msg)
     num1, num2 = msg.split('+')
     result = num1.to_i + num2.to_i
-    
+
     "#{msg} = #{result}"
   end
 end

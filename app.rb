@@ -1,10 +1,8 @@
-# frozen_string_literal: true
-
 ENV['RACK_ENV'] ||= 'development'
 
 Bundler.require :default
 
-Dir[File.expand_path('config/initializers', __dir__) + '/**/*.rb'].sort.each do |file|
+Dir["#{File.expand_path('config/initializers', __dir__)}/**/*.rb"].sort.each do |file|
   require file
 end
 
