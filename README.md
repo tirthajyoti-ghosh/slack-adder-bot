@@ -71,7 +71,7 @@
 
 A simple slack chat bot that adds two numbers. Eg: when the user types to the bot `234 + 123`, it responds back with `357`.
 
-![Screenshot](https://user-images.githubusercontent.com/57726348/102822841-cc67ac80-43ff-11eb-8e58-72690aeae8eb.png)
+![Screenshot](https://user-images.githubusercontent.com/57726348/103085343-6e0d1a80-4607-11eb-935e-55a5f1049725.png)
 
 ### Built With
 
