@@ -148,7 +148,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-1. Clone this repository
+1. Clone this repository.
 
    ```bash
    git clone https://github.com/tirthajyoti-ghosh/slack-adder-bot.git
@@ -204,7 +204,7 @@ Start a direct chat with the bot. The input must be in this format => `6+3`. If 
 <!-- ROADMAP -->
 ## Roadmap
 
-TBA
+* Add tests.
 
 <!-- CONTRIBUTING -->
 ## Contributing
